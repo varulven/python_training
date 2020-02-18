@@ -10,7 +10,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 
-class Test1():
+class Test11():
   def setup_method(self, method):
     self.driver = webdriver.Firefox()
     self.vars = {}
@@ -18,24 +18,25 @@ class Test1():
   def teardown_method(self, method):
     self.driver.quit()
   
-  def test_1(self):
+  def test_11(self):
+    # Test name: 1 (1)
+    # Step # | name | target | value | comment
+    # 1 | open | / |  | 
     self.driver.get("https://www.google.com/")
+    # 2 | setWindowSize | 1211x808 |  | 
     self.driver.set_window_size(1211, 808)
+    # 3 | click | name=q |  | 
     self.driver.find_element(By.NAME, "q").click()
+    # 4 | type | name=q | тестовый сценарий | 
     self.driver.find_element(By.NAME, "q").send_keys("тестовый сценарий")
+    # 5 | click | id=lga |  | 
     self.driver.find_element(By.ID, "lga").click()
+    # 6 | click | css=center:nth-child(1) > .gNO89b |  | 
     self.driver.find_element(By.CSS_SELECTOR, "center:nth-child(1) > .gNO89b").click()
+    # 7 | click | name=q |  | 
     self.driver.find_element(By.NAME, "q").click()
+    # 8 | type | name=q | hello world | 
     self.driver.find_element(By.NAME, "q").send_keys("hello world")
-    self.driver.find_element(By.CSS_SELECTOR, ".FAuhyb path").click()
-    element = self.driver.find_element(By.CSS_SELECTOR, ".FAuhyb path")
-    actions = ActionChains(self.driver)
-    actions.move_to_element(element).perform()
-    element = self.driver.find_element(By.ID, "dimg_18")
-    actions = ActionChains(self.driver)
-    actions.move_to_element(element).perform()
-    element = self.driver.find_element(By.CSS_SELECTOR, "body")
-    actions = ActionChains(self.driver)
-    actions.move_to_element(element, 0, 0).perform()
+    # 9 | close |  |  | 
     self.driver.close()
   
